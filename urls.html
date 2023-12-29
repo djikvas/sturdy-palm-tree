@@ -1,0 +1,62 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white p-4 flex flex-col gap-4 container">
+  <div class="flex flex-col gap-1">
+    <label for="quoteNumberInput" class="font-medium">
+      Enter Quote Number
+    </label>
+    <input id="quoteNumberInput" type="text" class="border px-3 py-1 rounded focus:border-blue-600/50" placeholder="ex.: KN-123 or 123">
+  </div>
+
+  <div>
+    <h3 class="font-medium">Premium Summary</h3>
+    <div data-url="https://staging.keystoneonline.com.au/v2/quotes/QUOTE_NUMBER/premium_summary"></div>
+  </div>
+
+  <div>
+    <h3 class="font-medium">Choose Cover</h3>
+    <div data-url="https://staging.keystoneonline.com.au/v2/quotes/QUOTE_NUMBER/choose_cover"></div>
+  </div>
+
+  <div>
+    <h3 class="font-medium">Confirm Cover</h3>
+    <div data-url="https://staging.keystoneonline.com.au/v2/quotes/QUOTE_NUMBER/choose_cover"></div>
+  </div>
+
+  <script>
+    function updateQuoteNumber(number = null) {
+      const numberIsValid = (typeof number == 'number')
+
+      document.querySelectorAll('[data-url]').forEach(element => {
+        const url = element.dataset.url
+
+        const linkElement = document.createElement('a')
+        linkElement.target = '_blank'
+        if (numberIsValid) {
+          linkElement.href = url.replace('QUOTE_NUMBER', number)
+          linkElement.classList.add('underline', 'text-blue-600', 'hover:text-blue-500')
+        }
+        const formattedNumber = numberIsValid ? number : 'QUOTE_NUMBER'
+        linkElement.innerHTML = url.split('QUOTE_NUMBER').join(`<span class="font-bold">${formattedNumber}</span>`)
+
+        element.replaceChildren(linkElement)
+      })
+    }
+
+    updateQuoteNumber()
+    window.quoteNumberInput.addEventListener('input', (event) => {
+      const value = event.target.value.trim().replace('KN-', '').replace('QN-', '')
+      const numberValue = Number(value)
+      const paramValue = numberValue.toString() == value ? numberValue : null
+
+
+      updateQuoteNumber(paramValue)
+    })
+  </script>
+</body>
+
+</html>
