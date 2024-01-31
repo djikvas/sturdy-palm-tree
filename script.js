@@ -7,7 +7,7 @@ iframes.set('V1 FD Beck', 'https://fdbeck.staging.insurance-portal.com.au/quote_
 iframes.set('V2 FD Beck', 'https://fdbeck.staging.insurance-portal.com.au/v2/quotes/financials/new?company_id=56')
 
 iframes.set('V1 Sparrow', 'https://sparrow.staging.insurance-portal.com.au/quote_financials/new?company_id=62')
-iframes.set('V2 Sparrow', 'https://sparrow.staging.insurance-portal.com.au/v2/quotes/financials/new?company_id=56')
+iframes.set('V2 Sparrow', 'https://sparrow.staging.insurance-portal.com.au/v2/quotes/financials/new?company_id=62')
 
 iframes.set('V1 Laneways.Agency', 'https://staging.keystoneonline.com.au/quote_financials/new?company_id=57')
 iframes.set('V2 Laneways.Agency', 'https://staging.keystoneonline.com.au/v2/quotes/financials/new?company_id=57')
