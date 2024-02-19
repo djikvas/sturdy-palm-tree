@@ -2,17 +2,17 @@
 
 const iframes = new Map()
 
-iframes.set('V1 Barinov', 'https://barinov.staging.insurance-portal.com.au/quote_financials/new?company_id=71')
-iframes.set('V2 Barinov', 'https://barinov.staging.insurance-portal.com.au/v2/quotes/financials/new?company_id=71')
+iframes.set('V1 Barinov', 'https://barinov.staging.insurance-portal.com.au/legacy/quote_financials/new?company_id=71')
+iframes.set('V2 Barinov', 'https://barinov.staging.insurance-portal.com.au/quotes/financials/new?company_id=71')
 
-iframes.set('V1 FD Beck', 'https://fdbeck.staging.insurance-portal.com.au/quote_financials/new?company_id=56')
-iframes.set('V2 FD Beck', 'https://fdbeck.staging.insurance-portal.com.au/v2/quotes/financials/new?company_id=56')
+iframes.set('V1 FD Beck', 'https://fdbeck.staging.insurance-portal.com.au/legacy/quote_financials/new?company_id=56')
+iframes.set('V2 FD Beck', 'https://fdbeck.staging.insurance-portal.com.au/quotes/financials/new?company_id=56')
 
-iframes.set('V1 Sparrow', 'https://sparrow.staging.insurance-portal.com.au/quote_financials/new?company_id=62')
-iframes.set('V2 Sparrow', 'https://sparrow.staging.insurance-portal.com.au/v2/quotes/financials/new?company_id=62')
+iframes.set('V1 Sparrow', 'https://sparrow.staging.insurance-portal.com.au/legacy/quote_financials/new?company_id=62')
+iframes.set('V2 Sparrow', 'https://sparrow.staging.insurance-portal.com.au/quotes/financials/new?company_id=62')
 
-iframes.set('V1 Laneways.Agency', 'https://staging.keystoneonline.com.au/quote_financials/new?company_id=57')
-iframes.set('V2 Laneways.Agency', 'https://staging.keystoneonline.com.au/v2/quotes/financials/new?company_id=57')
+iframes.set('V1 Laneways.Agency', 'https://staging.keystoneonline.com.au/legacy/quote_financials/new?company_id=57')
+iframes.set('V2 Laneways.Agency', 'https://staging.keystoneonline.com.au/quotes/financials/new?company_id=57')
 
 function replaceUrlQuoteType(url) {
   const quoteType = window.quoteTypeSelect.value
@@ -24,12 +24,12 @@ function replaceUrlQuoteType(url) {
     case 'not_profit':
       return url
         .replace('quote_financials', 'quote_not_profits')
-        .replace('v2/quotes/financials', 'v2/quotes/not_profits')
+        .replace('quotes/financials', 'quotes/not_profits')
       break;
     case 'jewellery':
       return url
         .replace('quote_financials', 'quote_jewelleries')
-        .replace('v2/quotes/financials', 'v2/quotes/jewelleries')
+        .replace('quotes/financials', 'quotes/jewelleries')
       break;
   }
 }
