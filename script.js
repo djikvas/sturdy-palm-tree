@@ -2,6 +2,9 @@
 
 const iframes = new Map()
 
+iframes.set('(PROD) V1 Barinov', 'https://barinovllcprod.insurance-portal.com.au/legacy/quote_financials/new?company_id=379')
+iframes.set('(PROD) V2 Barinov', 'https://barinovllcprod.insurance-portal.com.au/quotes/financials/new?company_id=379')
+
 iframes.set('V1 Barinov', 'https://barinov.staging.insurance-portal.com.au/legacy/quote_financials/new?company_id=71')
 iframes.set('V2 Barinov', 'https://barinov.staging.insurance-portal.com.au/quotes/financials/new?company_id=71')
 
