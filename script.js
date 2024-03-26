@@ -42,8 +42,10 @@ function switchIframeOnRadioChange(event) {
 }
 
 function switchIframe(scriptUrl) {
+  const scriptUri = new URL(scriptUrl)
   const script = document.createElement('script')
-  script.src = 'https://staging.insurance-portal.com.au/reseller.js'
+
+  script.src = `${scriptUri.origin}/reseller.js`
   script.dataset.src = replaceUrlQuoteType(scriptUrl)
   console.log(script.dataset.src)
 
